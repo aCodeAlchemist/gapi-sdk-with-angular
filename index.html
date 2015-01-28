@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<title>Omni Star Widget Layout</title>
+
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+		<style type="text/css">
+			body,p,h2,li,button {
+				font-family: 'Open Sans', sans-serif;
+			}
+
+			/* Sticky footer styles
+				-------------------------------------------------- */
+			html {
+			  position: relative;
+			  min-height: 100%;
+			}
+			body {
+			  /* Margin bottom by footer height */
+			  margin-bottom: 60px;
+			}
+
+			.footer {
+			  position: absolute;
+			  bottom: 0;
+			  width: 100%;
+			  /* Set the fixed height of the footer here */
+			  height: 60px;
+			  background-color: #f5f5f5;
+			}
+
+
+			/* Custom page CSS
+			-------------------------------------------------- */
+			/* Not required for template or sticky footer method. */
+
+			body > .container {
+			  padding: 0px 15px 0;
+			}
+			.container .text-muted {
+			  margin: 20px 0;
+			}
+
+			.footer > .container {
+			  padding-right: 15px;
+			  padding-left: 15px;
+			}
+
+			code {
+			  font-size: 80%;
+			}
+		</style>
+		<!-- Libs -->
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		
+		<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+
+		<script type="text/javascript" src="oauthApp.js"></script>		
+
+	</head>
+	<body>
+		<div class="container" ng-app="oauthApp" ng-controller="oauthCtrl">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+						<h2>Import Google Contacts Using Angular + Oauth</h2>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Import Contacts</h3>
+						</div>
+						<div class="panel-body" style="word-wrap:break-word">
+							<button style="display:block" ng-click="authentify()" class="btn btn-info"><i class="fa fa-google-plus-square fa-2"></i> Import from Google</button>
+							<p><span class="label label-success" style="margin:2px 2px 2px 2px;display:inline-block" ng-if="contacts.length > 0" ng-repeat="contact in contacts">{{contact.email}}</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<p class="text-muted">&copy; <a href="skype:jay.shah.agile">Jay Shah</a> | AGILE Infoways | 2015</p>
+			</div>
+		</footer>
+	</body>
+</html>
